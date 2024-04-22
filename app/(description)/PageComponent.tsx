@@ -74,6 +74,7 @@ export default function Description () {
               whileInView="visible_img"
               variants={animationVariants}
               transition={{ duration: 1, delay: 0.3 }}
+              viewport={{once: true}}
             >
               <img src="https://files.umso.co/lib_NzBDnSGOloSegeaJ/4021522.jpeg" style={{display: "block", maxWidth: "100%"}}/>
             </motion.div>
