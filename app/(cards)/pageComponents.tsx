@@ -1,34 +1,36 @@
 "use client";
 
 import styles from "./page.module.css";
-import { AnimatePresence, motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 
 export default function Cards() {
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Анімація буде відтворюватися тільки один раз
-    threshold: 0.8, // Поріг видимості елемента
-  });
 
-  const animationVariants = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: 50 },
-  };
-
-  const animationVariantsCards = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
+  const animationVariantsCards: Variants = {
+    visible_title: {
+      opacity: 1,
+      y: 0
+    },
+    hidden_title: {
+      opacity: 0,
+      y: 50,
+    },
+    visible_card: {
+      opacity: 1
+    },
+    hidden_card: {
+      opacity: 0
+    }
   };
 
   return (
     <section className={styles.cards}>
       <div className={styles.container}>
         <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={animationVariants}
+          initial="hidden_title"
+          whileInView={"visible_title"}
+          variants={animationVariantsCards}
           transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.8 }}
         >
           <header className={styles.cards_top}>
             <h2 className={styles.cards_top_h2}>Premium Features</h2>
@@ -40,9 +42,8 @@ export default function Cards() {
           </header>
         </motion.div>
         <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          initial="hidden_card"
+          whileInView="visible_card"
           variants={animationVariantsCards}
           transition={{ duration: 1, delay: 0.5 }}
         >

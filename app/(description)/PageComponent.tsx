@@ -1,24 +1,25 @@
 "use client"
 
 import styles from "./page.module.css"
-import { AnimatePresence, motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 
 export default function Description () {
 
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Анімація буде відтворюватися тільки один раз
-    threshold: 0.8, // Поріг видимості елемента
-  });
-
-  const animationVariants = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: 50 },
-  };
-
-  const animationVariantsImg = {
-    visible: { opacity: 1},
-    hidden: { opacity: 0},
+  const animationVariants: Variants = {
+    visible_card: {
+      opacity: 1,
+      y: 0
+    },
+    hidden_card: {
+      opacity: 0,
+      y: 50,
+    },
+    visible_img: {
+      opacity: 1
+    },
+    hidden_img: {
+      opacity: 0
+    }
   };
 
   return (
@@ -27,11 +28,11 @@ export default function Description () {
           <div className={styles.wrapper}>
             <div className={styles.description_left}>
             <motion.div
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
+              initial="hidden_card"
+              whileInView="visible_card"
               variants={animationVariants}
               transition={{ duration: 1 }}
+              viewport={{ once: true, amount: 0.8 }}
             >
               <div className={styles.description_top_title}>
                 <header className={styles.description_top_title_wrapper}>
@@ -48,9 +49,8 @@ export default function Description () {
               </div>
             </motion.div>
             <motion.div
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
+              initial="hidden_card"
+              whileInView="visible_card"
               variants={animationVariants}
               transition={{ duration: 1, delay: 0.2 }}
             >
@@ -69,10 +69,9 @@ export default function Description () {
             
             <div className={styles.description_right}>
             <motion.div
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={animationVariantsImg}
+              initial="hidden_img"
+              whileInView="visible_img"
+              variants={animationVariants}
               transition={{ duration: 1, delay: 0.3 }}
             >
               <img src="https://files.umso.co/lib_NzBDnSGOloSegeaJ/4021522.jpeg" style={{display: "block", maxWidth: "100%"}}/>
