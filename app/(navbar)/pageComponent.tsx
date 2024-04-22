@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import styles from "./page.module.css";
 import { motion } from "framer-motion";
@@ -8,7 +8,7 @@ export default function Home() {
     <section className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.wrapper}>
-          <motion.div 
+          <motion.div
             className={styles.main}
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
