@@ -109,18 +109,17 @@ a {
   }
 }
 
-/* styles.css */
 ::-webkit-scrollbar {
-  width: 12px; /* ширина скролбара */
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f5f5f5;
+  background-color: transparent;
   border-radius: 10px; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #888;
+  background-color: #292626; 
   border-radius: 10px; 
 }
 
