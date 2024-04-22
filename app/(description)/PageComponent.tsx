@@ -52,8 +52,8 @@ export default function Description () {
               initial="hidden_card"
               whileInView="visible_card"
               variants={animationVariants}
-              transition={{ duration: 1, delay: 0.2 }}
-              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true, amount: 0.8 }}
             >
               <div className={styles.description_bottom}>
                 <span className={styles.description_bottom_span}>"Switching to NeonEdge transformed my phone's aesthetic -
@@ -70,13 +70,14 @@ export default function Description () {
             
             <div className={styles.description_right}>
             <motion.div
+            className={styles.image_wrapper}
               initial="hidden_img"
               whileInView="visible_img"
               variants={animationVariants}
-              transition={{ duration: 1, delay: 0.3 }}
-              viewport={{once: true}}
+              transition={{ duration: 1 }}
+              viewport={{once: true, amount: 0.4}}
             >
-              <img src="https://files.umso.co/lib_NzBDnSGOloSegeaJ/4021522.jpeg" style={{display: "block", maxWidth: "100%"}}/>
+              <img src="https://files.umso.co/lib_NzBDnSGOloSegeaJ/4021522.jpeg" className={styles.description_image}/>
             </motion.div>
             </div>
           </div>

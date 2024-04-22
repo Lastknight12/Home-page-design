@@ -2,7 +2,7 @@
   z-index: 2;
   display: flex;
   padding-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   top: 0;
   left: 0;
   right: 0;
@@ -118,4 +118,46 @@
 
 .logo_image {
   width: 65px;
+}
+
+.btn_burger {
+  display: none;
+}
+
+@media (max-width: 665px) {
+  .btn_auth {
+    display: none;
+  }
+
+  .btn_burger {
+    display: block;
+    background: rgb(0 0 0 / 62%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .btn_burger_span {
+    background: #fff;
+    height: 1px;
+    width: 15px;
+  }
+
+  .nav_links {
+    display: none;
+  }
+
+  .main {
+    width: 100%;
+  }
+  
+  .nav_wrapper {
+    justify-content: space-between;
+  }
 }

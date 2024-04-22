@@ -101,4 +101,25 @@
     width: calc(50% - 4em);
     margin: 3em 3em 3em 1em;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.description_image {
+    display: block; 
+    max-width: 100%
+}
+
+@media (max-width: 860px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .description_right {
+        display: none;
+    }
+
+    .description_left {
+        margin: 1em;
+    }
 }

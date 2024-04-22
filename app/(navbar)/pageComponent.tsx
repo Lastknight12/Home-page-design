@@ -50,6 +50,11 @@ export default function Home() {
                 >
                   <span>Login </span>
                 </button>
+                <button className={styles.btn_burger}>
+                  <span className={styles.btn_burger_span}></span>
+                  <span className={styles.btn_burger_span}></span>
+                  <span className={styles.btn_burger_span}></span>
+                </button>
               </div>
             </nav>
           </motion.div>
