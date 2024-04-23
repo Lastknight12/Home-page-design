@@ -5,7 +5,7 @@ import Main from "./components/main/Main";
 import Description from "./components/description/PageComponent";
 import Cards from "./components/cards/Card";
 
-export default function BGImage() {
+export default function App() {
   return (
     <>
       <motion.div
