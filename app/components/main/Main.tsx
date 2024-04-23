@@ -9,7 +9,7 @@ export default function Main() {
       pathLength: 1,
       transition: {
         duration: 3,
-        delay: 0.7
+        delay: 0.4
       },
     },
     hidden: {
@@ -22,7 +22,7 @@ export default function Main() {
       opacity: 1,
       transition: {
         duration: 1.5,
-        delay: 0.7
+        delay: 0.4
       }
     },
     hidden: {
