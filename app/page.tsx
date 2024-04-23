@@ -19,16 +19,6 @@ export default function BGImage() {
       <Main />
       <Description />
       <Cards />
-      <div
-        style={{
-          margin: "30px 30px 30px 0",
-          textAlign: "end",
-          fontSize: "1.5em",
-          color: "#fff",
-        }}
-      >
-        Site developed by Last
-      </div>
     </>
   );
 }
